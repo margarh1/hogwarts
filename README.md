@@ -31,3 +31,11 @@ Add functionality so students can enroll at Hogwarts (Creating a new student). Y
 8. Got individual house pages to render
   * Used the @house instance to find the student objects with the matching house id
   * Stored the resulting students in their own array for webpage iteration
+9. Got the enrollment page to render and work
+  * Allowed the resources for students to access the new and create paths
+  * Created a form for a new student
+  * Randomized House assignment
+  * Redirect a successfully sorted student to their own page
+  * Created a flash message to declare the successful sorting
+  * Created a flash message, in case of errors
+  * Created a redirect, in case of errors

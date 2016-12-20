@@ -12,6 +12,10 @@
     <h2><a href="/houses">View Houses</a> | <a href="/students">View Students</a> | <a href="/students/new">Enroll</a></h2>
   </nav>
 
+  <% if flash[:notice] %>
+    <div><%= flash[:notice] %></div>
+  <% end %>
+
   <%= yield %>
 
 </body>

@@ -3213,3 +3213,308 @@ Processing by HousesController#index as HTML
   [1m[36mHouses Load (0.4ms)[0m  [1mSELECT "houses".* FROM "houses"[0m
   Rendered houses/index.html.erb within layouts/application (2.9ms)
 Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/houses/21" for 127.0.0.1 at 2016-12-19 16:35:46 -0800
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[35mHouses Load (0.4ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", "21"]]
+  [1m[36mStudent Load (0.3ms)[0m  [1mSELECT "students".* FROM "students" WHERE (house_id = 21)[0m
+  Rendered houses/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 11ms (Views: 7.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2016-12-19 16:35:47 -0800
+Processing by StudentsController#index as HTML
+  [1m[35mStudent Load (0.4ms)[0m  SELECT "students".* FROM "students"
+  [1m[36mHouses Load (0.7ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 21]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 21]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 21]]
+  [1m[35mHouses Load (0.5ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 23]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 23]]
+  [1m[35mHouses Load (0.2ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 22]]
+  [1m[36mHouses Load (0.2ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 24]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 24]]
+  Rendered students/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 18ms (Views: 14.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/students/13" for 127.0.0.1 at 2016-12-19 16:35:49 -0800
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mStudent Load (0.4ms)[0m  [1mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", "13"]]
+  [1m[35mHouses Load (0.2ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 24]]
+  Rendered students/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/houses" for 127.0.0.1 at 2016-12-19 16:35:51 -0800
+Processing by HousesController#index as HTML
+  [1m[36mHouses Load (0.3ms)[0m  [1mSELECT "houses".* FROM "houses"[0m
+  Rendered houses/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2016-12-19 16:35:52 -0800
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"new"}
+  [1m[35mStudent Load (0.4ms)[0m  SELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", "new"]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Student with id=new):
+  app/controllers/students_controller.rb:8:in `show'
+
+
+  Rendered /Users/margaret/.rvm/gems/ruby-2.3.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/margaret/.rvm/gems/ruby-2.3.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/margaret/.rvm/gems/ruby-2.3.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/margaret/.rvm/gems/ruby-2.3.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (46.2ms)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2016-12-19 16:35:52 -0800
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"new"}
+  [1m[36mStudent Load (0.3ms)[0m  [1mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", "new"]]
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find Student with id=new):
+  app/controllers/students_controller.rb:8:in `show'
+
+
+  Rendered /Users/margaret/.rvm/gems/ruby-2.3.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/margaret/.rvm/gems/ruby-2.3.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /Users/margaret/.rvm/gems/ruby-2.3.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/margaret/.rvm/gems/ruby-2.3.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (45.3ms)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2016-12-19 16:37:20 -0800
+Processing by StudentsController#new as HTML
+  Rendered students/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 8ms (Views: 4.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-12-19 16:37:20 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-12-19 16:37:20 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-12-19 16:37:20 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-12-19 16:37:20 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-12-19 16:37:20 -0800
+
+
+Started GET "/students/new" for 127.0.0.1 at 2016-12-19 16:37:27 -0800
+Processing by StudentsController#new as HTML
+  Rendered students/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-12-19 16:37:27 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-12-19 16:37:27 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-12-19 16:37:27 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-12-19 16:37:27 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-12-19 16:37:27 -0800
+
+
+Started GET "/students/new" for 127.0.0.1 at 2016-12-19 16:41:44 -0800
+Processing by StudentsController#new as HTML
+  Rendered students/new.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-12-19 16:41:44 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-12-19 16:41:44 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-12-19 16:41:44 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-12-19 16:41:44 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-12-19 16:41:44 -0800
+
+
+Started GET "/students/new" for 127.0.0.1 at 2016-12-19 16:47:05 -0800
+Processing by StudentsController#new as HTML
+  Rendered students/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 17ms (Views: 13.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-12-19 16:47:06 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-12-19 16:47:06 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-12-19 16:47:06 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-12-19 16:47:06 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-12-19 16:47:06 -0800
+
+
+Started POST "/students" for 127.0.0.1 at 2016-12-19 16:47:13 -0800
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pvkFrR6zqlDiS/JGAiHqJ4U6OP7ZlPkBMPEO1nxHnk8=", "student"=>{"name"=>"Margaret Ha", "img_url"=>""}, "commit"=>"Sit Under the Sorting Hat"}
+  [1m[35mHouses Load (0.3ms)[0m  SELECT "houses".* FROM "houses"
+Redirected to http://localhost:3000/students/
+Completed 302 Found in 16ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/students/" for 127.0.0.1 at 2016-12-19 16:47:13 -0800
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.4ms)[0m  [1mSELECT "students".* FROM "students"[0m
+  [1m[35mHouses Load (0.3ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 21]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 21]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 21]]
+  [1m[36mHouses Load (0.2ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 23]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 23]]
+  [1m[36mHouses Load (0.2ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 22]]
+  [1m[35mHouses Load (0.2ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 24]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 24]]
+  Rendered students/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-12-19 16:47:14 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-12-19 16:47:14 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-12-19 16:47:14 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-12-19 16:47:14 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-12-19 16:47:14 -0800
+
+
+Started GET "/students/" for 127.0.0.1 at 2016-12-19 16:47:29 -0800
+Processing by StudentsController#index as HTML
+  [1m[35mStudent Load (0.3ms)[0m  SELECT "students".* FROM "students"
+  [1m[36mHouses Load (0.2ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 21]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 21]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 21]]
+  [1m[35mHouses Load (0.2ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 23]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 23]]
+  [1m[35mHouses Load (0.2ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 22]]
+  [1m[36mHouses Load (0.2ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 24]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 24]]
+  Rendered students/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-12-19 16:47:29 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-12-19 16:47:29 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-12-19 16:47:29 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-12-19 16:47:29 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-12-19 16:47:29 -0800
+  [1m[36mStudent Load (0.6ms)[0m  [1mSELECT "students".* FROM "students" ORDER BY "students"."id" DESC LIMIT 1[0m
+
+
+Started GET "/students/new" for 127.0.0.1 at 2016-12-19 16:48:48 -0800
+Processing by StudentsController#new as HTML
+  Rendered students/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 21ms (Views: 16.9ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/students" for 127.0.0.1 at 2016-12-19 16:48:51 -0800
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pvkFrR6zqlDiS/JGAiHqJ4U6OP7ZlPkBMPEO1nxHnk8=", "student"=>{"name"=>"Margaret Ha", "img_url"=>""}, "commit"=>"Sit Under the Sorting Hat"}
+  [1m[36mHouses Load (0.5ms)[0m  [1mSELECT "houses".* FROM "houses"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "students" ("created_at", "house_id", "img_url", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Tue, 20 Dec 2016 00:48:51 UTC +00:00], ["house_id", 24], ["img_url", ""], ["name", "Margaret Ha"], ["updated_at", Tue, 20 Dec 2016 00:48:51 UTC +00:00]]
+  [1m[35m (5.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/students/15
+Completed 302 Found in 22ms (ActiveRecord: 8.6ms)
+
+
+Started GET "/students/15" for 127.0.0.1 at 2016-12-19 16:48:51 -0800
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", "15"]]
+  [1m[35mHouses Load (0.2ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 24]]
+  Rendered students/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-12-19 16:48:51 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-12-19 16:48:51 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-12-19 16:48:51 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-12-19 16:48:51 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-12-19 16:48:51 -0800
+
+
+Started GET "/students" for 127.0.0.1 at 2016-12-19 16:49:01 -0800
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (1.4ms)[0m  [1mSELECT "students".* FROM "students"[0m
+  [1m[35mHouses Load (0.4ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 21]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 21]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 21]]
+  [1m[36mHouses Load (0.3ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 23]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 23]]
+  [1m[36mHouses Load (0.4ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 22]]
+  [1m[35mHouses Load (0.2ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 24]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 24]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 24]]
+  Rendered students/index.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 26ms (Views: 22.1ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/houses" for 127.0.0.1 at 2016-12-19 16:49:04 -0800
+Processing by HousesController#index as HTML
+  [1m[36mHouses Load (0.6ms)[0m  [1mSELECT "houses".* FROM "houses"[0m
+  Rendered houses/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/houses/24" for 127.0.0.1 at 2016-12-19 16:49:05 -0800
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mHouses Load (0.4ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", "24"]]
+  [1m[36mStudent Load (0.5ms)[0m  [1mSELECT "students".* FROM "students" WHERE (house_id = 24)[0m
+  Rendered houses/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/houses" for 127.0.0.1 at 2016-12-19 16:49:08 -0800
+Processing by HousesController#index as HTML
+  [1m[35mHouses Load (0.9ms)[0m  SELECT "houses".* FROM "houses"
+  Rendered houses/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.9ms)
